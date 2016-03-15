@@ -11,6 +11,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <script src="js/carousel-swipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
 <style>
 body{
 	font-family: "微軟正黑體","Montserrat",Arial,Helvetica,Verdana,sans-serif !important;
@@ -97,6 +100,20 @@ h1,h2{
 #what a{
 	color:#FDD692;
 }
+.what-col-box{
+	opacity: 0.1;
+}
+.what-col-box.opacIn{
+	animation: opacIn 1s ease-in forwards
+}
+@keyframes opacIn{
+	from{
+		opacity: 0.1;
+	}
+	to{
+		opacity: 1;
+	}
+}
 .can-box{
 	text-align: center;
 	border-radius: 50%;
@@ -149,10 +166,26 @@ h1,h2{
 	font-size: 18px;
 	margin-bottom: 6px;
 }
+#qa dl{
+	position: relative;
+}
+#qa .qa-dt.ani{
+	animation: anic 1s ease forwards;
+}
+@keyframes anic{
+	from{
+		color: #fff;
+	}
+	to{
+		color: #D81159;
+	}
+}
+.contact-col-box{
+	transform: scale(0.1);
+}
 #footer{
 	width: 100%;
 	padding: 24px 0;
-
 }
 .copy{
 	font-size: 14px;
@@ -180,6 +213,12 @@ h1,h2{
 	}
 	#this h4{
 		font-size: 18px;
+	}
+	#this .this-col-title{
+		overflow: hidden;
+	}
+	#this .this-title{
+		transform: translateX(800px);
 	}
 	#title{
 		padding:24px 0 0;
@@ -236,10 +275,31 @@ h1,h2{
 		font-size: 14px;
 		color: #666;
 	}
-	.can-box{{
-		margin: 0 auto;
+	.can-box{
+		margin: 12px auto;
 	}
 	#qa dl{font-size: 18px;}
+	#qa .qa-dt:before{
+		content: '';
+		display: block;
+		height: 2px;
+		background-color: #D81159;
+		position: absolute;
+		top: 23px;
+		left: 0;
+		transition:all 2s ease;
+	}
+	#qa .qa-dt.ani:before{
+		animation: aniw 1s ease forwards;
+	}
+	@keyframes aniw{
+		from{
+			width: 0%;
+		}
+		to{
+			width: 22%;
+		}
+	}
 	.contact-p{
 		font-size: 24px;
 		margin: 0 0 0;
@@ -248,12 +308,58 @@ h1,h2{
 		font-weight: 600;
 		font-size: 28px;
 	}
+	.contact-col-box.zooIn{
+		animation: zooIn 1s ease-in forwards;
+	}
+	@keyframes zooIn{
+		from{
+			transform: scale(0.1);
+		}
+		to{
+			transform: scale(1);
+		}
+	}
 	#footer{padding: 74px 0;}
 	.copy{font-size: 20px;}
 }
+/*test*/
+.boxbox{
+	position: fixed;
+	overflow: visible;
+	white-space: nowrap;
+	pointer-events: none;
+	font-size: 1em;
+	z-index: 9999;
+	top: 50%;
+	right: 0;
+	transform: translate(0,-50%);
+}
+.box-con{
+	position: absolute;
+	overflow: visible;
+	border-width: 1px 0px 0px;
+	border-style: solid;
+	color: blue;
+	border-color: blue;
+	right: 0px;
+}
+.box-text{
+	cursor: pointer;
+	position: relative;
+	padding: 0px 8px 3px;
+	transform: translateY(-100%);
+}
+/*test*/
 </style>
 </head>
 <body>
+<!-- test -->
+<!-- <div class="boxbox">
+	<div class="box-con">
+		<div class="box-text">trigger 1</div>
+	</div>
+</div> -->
+<!-- test -->
 <header id="header" class="bluebg">
 	<div class="container">
 		<div class="row">
@@ -279,11 +385,11 @@ h1,h2{
 	<section id="this" class="pd shd">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
-					<h1 class="text-center">森林保育的重要性 ! </h1>
+				<div class="col-md-12 this-col-title">
+					<h1 class="text-center this-title animated">森林保育的重要性 ! </h1>
 				</div>
 				<div class="row this-row2">
-					<div class="col-md-8 col-sm-8 col-xs-12 this-img">
+					<div class="col-md-8 col-sm-8 col-xs-12 this-img animated">
 						<img src="images/img02.jpg" alt="" class="img-responsive center-block">
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-12">
@@ -350,31 +456,31 @@ h1,h2{
 		<div class="container width800">
 			<div class="row">
 				<div class="col-md-12">
-					<h2 class="text-center">城市森林的效益 ! </h2>
+					<h2 class="text-center animated can-col-title">城市森林的效益 ! </h2>
 				</div>
 				<div class="col-md-3 col-sm-3 col-xs-6">
-					<div class="can-box">
+					<div class="can-box animated">
 						<i class="fa fa-ship"></i>
 					</div>
 					<div class="can-title">一棵樹，十個空調</div>
 					<p>單一、年輕且健康的樹木的冷卻效益，相當十個房間大、一天開20小時運作的冷氣空調。</p>
 				</div>
 				<div class="col-md-3 col-sm-3 col-xs-6">
-					<div class="can-box">
+					<div class="can-box animated">
 						<i class="fa fa-ship"></i>
 					</div>
 					<div class="can-title">降空污灰塵</div>
 					<p>獨立樹林可以減少9-13%的微粒污染，相對於開放場域，灰塵降到有這些樹林覆蓋的地面只有27-42%的量。</p>
 				</div>
 				<div class="col-md-3 col-sm-3 col-xs-6">
-					<div class="can-box">
+					<div class="can-box animated">
 						<i class="fa fa-ship"></i>
 					</div>
 					<div class="can-title">節能減碳</div>
 					<p>今天在你屋子的西邊種一棵樹，之後5年可幫你節能3%，15年則可節能12％。</p>
 				</div>
 				<div class="col-md-3 col-sm-3 col-xs-6">
-					<div class="can-box">
+					<div class="can-box animated">
 						<i class="fa fa-ship"></i>
 					</div>
 					<div class="can-title">大自然效益</div>
@@ -386,7 +492,7 @@ h1,h2{
 	<section id="what" class="bluebg pd shd">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12 text-center">
+				<div class="col-md-12 text-center what-col-box">
 					<h1>立即聯絡</h1>
 					<p class="contact-p">THIS IS MY WEB SITE : </p>
 					<a href="http://psycho909.github.io/mywebsite/" class="contact-a">http://psycho909.github.io/mywebsite/</a>
@@ -400,21 +506,21 @@ h1,h2{
 				<div class="col-md-12">
 					<h2 class="text-center">環保問題與森林影響</h2>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4 try-col-box animated">
 					<div class="try-title text-center">First</div>
 					<div class="try-box">
 						<i class="fa fa-leaf"></i>
 					</div>
 					<div class="try-con text-center">環境保護的問題</div>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4 try-col-box animated">
 					<div class="try-title text-center">Second</div>
 					<div class="try-box">
 						<i class="fa fa-truck"></i>
 					</div>
 					<div class="try-con text-center">都市林及其效益</div>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4 try-col-box animated">
 					<div class="try-title text-center">Third</div>
 					<div class="try-box">
 						<i class="fa fa-tree"></i>
@@ -464,19 +570,19 @@ h1,h2{
 				<div class="col-md-offset-2 col-md-8">
 					<h1 class="text-center" style="color: #fff;">森林的環保與保健效應</h1>
 					<dl style="color: #fff;">
-						<dt>問：森林調節氣象？</dt>
+						<dt class="qa-dt">問：森林調節氣象？</dt>
 						<dd>森林因形成微氣候的環境，故有緩和局部氣溫、地溫、濕度與風力的效果，加上日照的遮阻，減低太陽光熱的效果。森林能降低高溫，增高低溫，使林內的溫差減少，予人快適舒展之感。</dd>
 					</dl>
 					<dl style="color: #fff;">
-						<dt>問：森林涵養水源？</dt>
+						<dt class="qa-dt">問：森林涵養水源？</dt>
 						<dd>森林涵養水源的效應，係指森林調節河川流量與養水資源供應的作用，因水資源為一種重要的自然資源，在多山之區如台灣，水多來自山中森林分布地區，故森林存在對於降水、河水的水量消長有密切的關係。森林的地表因具有厚密的枯枝落葉腐植土層，不僅增加地表水的滲透機會，亦使被汙染的地表水內的雜質獲得過濾效果。所謂青山綠水表示流水經過森林而排出時，常為清淨的水質。</dd>
 					</dl>
 					<dl style="color: #fff;">
-						<dt>問：森林防災效果？</dt>
+						<dt class="qa-dt">問：森林防災效果？</dt>
 						<dd>森林分布的土地上，因其厚林木的組成，形成垂直與水平的保護帶，對多種自然災害有預防或減輕的功效。此包括防止土壤侵蝕、崩坍、飛砂、潮害、雪等為害，均應視為森林防災效用。</dd>
 					</dl>
 					<dl style="color: #fff;">
-						<dt>問：改進環境品質？</dt>
+						<dt class="qa-dt">問：改進環境品質？</dt>
 						<dd>使用 植物因進行光合作用吸收大量二氣化碳，並釋放出氧氣，可淨化汙染的空氣並補充氧氣。大氣中含有多種汙染的化學物質與塵埃，樹冠枝葉可吸附及聚集大量上項汙染物質，土壤上層枯枝落葉亦會截留甚多汙染物，使空氣中汙染物濃度降低，有利人類的呼吸與健康。茂密的林帶可減少車輛及行人的噪音。因樹冠枝葉將噪音的聲波吸收及將噪音的來源阻隔，得以保護鄰近地區的安靜，此為都市林的另一效果。</dd>
 					</dl>
 				</div>
@@ -486,7 +592,7 @@ h1,h2{
 	<section id="contact" class="pd shd">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12 text-center">
+				<div class="col-md-12 text-center contact-col-box animated">
 					<h1>CONTACT ME</h1>
 					<p class="contact-p">THIS IS MY WEB SITE : </p>
 					<a href="http://psycho909.github.io/mywebsite/" class="contact-a">http://psycho909.github.io/mywebsite/</a>
@@ -508,6 +614,55 @@ h1,h2{
 </footer>
 
 <script>
+var controller = new ScrollMagic.Controller();
+var scene1=new ScrollMagic.Scene({
+	triggerElement:'#this'
+})
+.setClassToggle(".this-img", "bounceIn")
+.addTo(controller);
+
+var scene2=new ScrollMagic.Scene({
+	triggerElement:'#this'
+})
+.setClassToggle(".this-title", "bounceInRight")
+.addTo(controller);
+
+var scene3=new ScrollMagic.Scene({
+	triggerElement:'#can'
+})
+.setClassToggle(".can-box", "rubberBand")
+.addTo(controller);
+
+var scene4=new ScrollMagic.Scene({
+	triggerElement:'#can'
+})
+.setClassToggle(".can-col-title", "bounce")
+.addTo(controller);
+
+var scene5=new ScrollMagic.Scene({
+	triggerElement:'#try'
+})
+.setClassToggle(".try-col-box", "flipInX")
+.addTo(controller);
+
+var scene6=new ScrollMagic.Scene({
+	triggerElement:'#qa'
+})
+.setClassToggle(".qa-dt", "ani")
+.addTo(controller);
+
+var scene7=new ScrollMagic.Scene({
+	triggerElement:'#contact'
+})
+.setClassToggle(".contact-col-box", "zooIn")
+.addTo(controller);
+
+var scene7=new ScrollMagic.Scene({
+	triggerElement:'#what'
+})
+.setClassToggle(".what-col-box", "opacIn")
+.addTo(controller);
+
 $("#carousel-share,#carousel-try").carousel({
 	interval:false
 })
