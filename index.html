@@ -16,10 +16,6 @@ body{
 	font-family: "微軟正黑體","Montserrat",Arial,Helvetica,Verdana,sans-serif !important;
 }
 .bluebg{background-color: #2290cd;}
-.shd{
-	position: relative;
-	box-shadow: 0 4px 8px rgba(0,0,0,.3);
-}
 .pd{
 	padding: 24px 0;
 }
@@ -59,6 +55,9 @@ body{
 	margin-right: -12px;
 	margin-left: -12px;
 }
+.this-img{
+	margin-bottom: 12px;
+}
 .a-left,
 .a-right{
 	width: 10%;
@@ -68,6 +67,7 @@ body{
 }
 .share-img{
 	width: 90px;
+	height: 90px;
 	border: 6px solid #30A9DE;
 	position: absolute;
 	top: -105px;
@@ -75,6 +75,7 @@ body{
 	transform: translateX(-50%);
 	background-color: #fff;
 	border-radius: 50%;
+	object-fit: cover;
 }
 #share .carousel-inner>.item{
 	padding: 56px 16px 32px;
@@ -145,6 +146,10 @@ body{
 	color: #fff;
 }
 @media (min-width: 992px){
+	.shd{
+		position: relative;
+		box-shadow: 0 4px 8px rgba(0,0,0,.3);
+	}
 	.width800{
 		width: 800px;
 	}
@@ -169,6 +174,10 @@ body{
 	.title-col h1{
 		font-size: 43px;
 	}
+	.title-img img{
+		height: 339px;
+		object-fit: cover;
+	}
 	#this p{
 		font-size: 20px;
 	}
@@ -181,7 +190,8 @@ body{
 		overflow: hidden;
 	}
 	.share-img{
-		width: 125px;
+		width: 111px;
+		height: 111px;
 		border: 6px solid #30A9DE;
 		position: static;
 		top: 0px;
@@ -202,6 +212,7 @@ body{
 	.share-name{
 		font-size: 1.5em;
 	}
+	#can,#try,#this{ z-index: 2; }
 	.try-title{
 		color: #2290cd;
 		font-size: 24px;
@@ -244,22 +255,22 @@ body{
 		<div class="container">
 			<div class="row title-row">
 				<div class="col-md-12 col-sm-12 col-xs-12 title-col">
-					<h1 class="text-center" style="color:#fff;">GraphicStock 不是尋常的網站!</h1>
+					<h1 class="text-center" style="color:#fff;">我們只有一個地球，請為子孫留下一片淨土!</h1>
 					<div class="title-img">
-						<img src="images/img01.jpg" alt="" class="img-responsive center-block">
+						<img src="images/img01.jpeg" alt="" class="img-responsive center-block">
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section id="this" class="pd">
+	<section id="this" class="pd shd">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
 					<h1 class="text-center">GraphicStock 是什麼？</h1>
 				</div>
 				<div class="row this-row2">
-					<div class="col-md-8 col-sm-8 col-xs-12">
+					<div class="col-md-8 col-sm-8 col-xs-12 this-img">
 						<img src="images/img02.jpg" alt="" class="img-responsive center-block">
 					</div>
 					<div class="col-md-4 col-sm-4 col-xs-12">
@@ -268,7 +279,7 @@ body{
 					</div>
 				</div>
 				<div class="col-md-12">
-					<h4 class="text-center">官方網址：<a href="#">https://www.graphicstock.com/</a></h4>
+					<h4 class="text-center">官方網址：<a href="http://psycho909.github.io/mywebsite/">http://psycho909.github.io/mywebsite/</a></h4>
 				</div>
 			</div>
 		</div>
@@ -285,49 +296,49 @@ body{
 					<div class="carousel-inner">
 						<div class="item active">
 							<div class="col-md-2">
-								<img src="images/1.png" alt="" class="center-block img-responsive share-img">
+								<img src="images/1.jpg" alt="" class="center-block img-responsive share-img">
 							</div>
 							<div class="col-md-10 share-text">
-								<p>部落格中有許多好文，讓我充實不少，感謝Money101.com.tw用心提供專業實用的知識！</p>
-								<div class="share-name"><span>Jerry, Hsinchu</span></div>
+								<p>子孫若如我，留錢做什麼，賢而多財，則損其志；子孫不如我，留錢做什麼，愚而多財，益增其過。</p>
+								<div class="share-name"><span>by 林則徐</span></div>
 							</div>
 						</div>
 						<div class="item">
 							<div class="col-md-2">
-								<img src="images/1.png" alt="" class="center-block img-responsive share-img">
+								<img src="images/02.jpg" alt="" class="center-block img-responsive share-img">
 							</div>
 							<div class="col-md-10 share-text">
-								<p>部落格中有許多好文，讓我充實不少，感謝Money101.com.tw用心提供專業實用的知識！</p>
-								<div class="share-name"><span>Jerry, Hsinchu</span></div>
+								<p>墨寫的謊說，決掩不住血寫的事實。哪裡有天才，我是把別人喝咖啡的工夫都用在了工作上了。</p>
+								<div class="share-name"><span>by 魯迅</span></div>
 							</div>
 						</div>
 						<div class="item">
 							<div class="col-md-2">
-								<img src="images/1.png" alt="" class="center-block img-responsive share-img">
+								<img src="images/03.jpg" alt="" class="center-block img-responsive share-img">
 							</div>
 							<div class="col-md-10 share-text">
-								<p>部落格中有許多好文，讓我充實不少，感謝Money101.com.tw用心提供專業實用的知識！</p>
-								<div class="share-name"><span>Jerry, Hsinchu</span></div>
+								<p>一個專心致志思索的人並不是在虛度光陰。雖然有些勞動是有形的，但也有一種勞動是無形的。</p>
+								<div class="share-name"><span>by 雨果</span></div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<a class="a-left left carousel-control" href="#carousel-share" role="button" data-slide="prev">
+		<a class="a-left left carousel-control hidden-xs" href="#carousel-share" role="button" data-slide="prev">
 			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 			<span class="sr-only">Previous</span>
 		</a>
-		<a class="a-right right carousel-control" href="#carousel-share" role="button" data-slide="next">
+		<a class="a-right right carousel-control hidden-xs" href="#carousel-share" role="button" data-slide="next">
 			<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 			<span class="sr-only">Next</span>
 		</a>
 	</section>
-	<section id="can" class="pd">
+	<section id="can" class="pd shd">
 		<div class="container width800">
 			<div class="row">
 				<div class="col-md-12">
-					<h2 class="text-center">為何選擇Money101.com.tw?</h2>
+					<h2 class="text-center">我會使用的技能 ! </h2>
 				</div>
 				<div class="col-md-3 col-sm-3 col-xs-6">
 					<div class="can-box">
@@ -352,18 +363,18 @@ body{
 			</div>
 		</div>
 	</section>
-	<section id="what" class="bluebg pd">
+	<section id="what" class="bluebg pd shd">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-center">
-					<h1>立即嘗試</h1>
+					<h1>立即聯絡</h1>
 					<p class="contact-p">THIS IS MY WEB SITE : </p>
-					<a href="#" class="contact-a">https://www.graphicstock.com/</a>
+					<a href="http://psycho909.github.io/mywebsite/" class="contact-a">http://psycho909.github.io/mywebsite/</a>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section id="try" class="pd">
+	<section id="try" class="pd shd">
 		<div class="container width600">
 			<div class="row hidden-xs">
 				<div class="col-md-12">
@@ -377,18 +388,18 @@ body{
 					<div class="try-con text-center">按照您的需求選擇</div>
 				</div>
 				<div class="col-md-4">
-					<div class="try-title text-center">第1步</div>
+					<div class="try-title text-center">第2步</div>
 					<div class="try-box">
 						<i class="fa fa-ship"></i>
 					</div>
-					<div class="try-con text-center">按照您的需求選擇</div>
+					<div class="try-con text-center">依據特性，快速比較各產品</div>
 				</div>
 				<div class="col-md-4">
-					<div class="try-title text-center">第1步</div>
+					<div class="try-title text-center">第3步</div>
 					<div class="try-box">
 						<i class="fa fa-ship"></i>
 					</div>
-					<div class="try-con text-center">按照您的需求選擇</div>
+					<div class="try-con text-center">輕鬆找出最適合您的產品</div>
 				</div>
 			</div>
 			<div class="row visible-xs">
@@ -412,14 +423,14 @@ body{
 								<div class="try-box">
 									<i class="fa fa-ship"></i>
 								</div>
-								<div class="try-con text-center">按照您的需求選擇</div>
+								<div class="try-con text-center">依據特性，快速比較各產品</div>
 							</div>
 							<div class="item">
 								<div class="try-title text-center">第1步</div>
 								<div class="try-box">
 									<i class="fa fa-ship"></i>
 								</div>
-								<div class="try-con text-center">按照您的需求選擇</div>
+								<div class="try-con text-center">輕鬆找出最適合您的產品</div>
 							</div>
 						</div>
 					</div>
@@ -427,7 +438,7 @@ body{
 			</div>
 		</div>
 	</section>
-	<section id="qa" class="bluebg pd">
+	<section id="qa" class="bluebg pd shd">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-offset-2 col-md-8">
@@ -466,7 +477,7 @@ body{
 				<div class="col-md-12 text-center">
 					<h1>CONTACT ME</h1>
 					<p class="contact-p">THIS IS MY WEB SITE : </p>
-					<a href="#" class="contact-a">https://www.graphicstock.com/</a>
+					<a href="http://psycho909.github.io/mywebsite/" class="contact-a">http://psycho909.github.io/mywebsite/</a>
 				</div>
 			</div>
 		</div>
@@ -477,7 +488,7 @@ body{
 		<div class="row copy-row">
 			<div class="col-md-12 col-sm-12 col-xs-12 copy-col">
 				<div class="copy text-center">
-					© 2016 - graphicstock.com
+					© 2016 - psychosocial909@gmail.com
 				</div>
 			</div>
 		</div>
