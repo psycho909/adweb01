@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<script src="js/carousel-swipe.js"></script>
 <style>
 body{
 	font-family: "微軟正黑體","Montserrat",Arial,Helvetica,Verdana,sans-serif !important;
@@ -390,7 +391,7 @@ body{
 					<div class="try-con text-center">按照您的需求選擇</div>
 				</div>
 			</div>
-			<div class="row visibity-xs">
+			<div class="row visible-xs">
 				<div class="col-md-12">
 					<div id="carousel-try" class="carousel slide" data-ride="carousel">
 						<ol class="carousel-indicators">
@@ -484,7 +485,9 @@ body{
 </footer>
 
 <script>
-
+$("#carousel-share,#carousel-try").carousel({
+	interval:false
+})
 </script>
 </body>
 </html>
